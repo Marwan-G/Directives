@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {BasicHighlightDirective} from './bacichighlight/basic-highlight.directive';
+import { SecondHighlightDirective } from './second-highlight/second-highlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BasicHighlightDirective
+    BasicHighlightDirective,
+    SecondHighlightDirective
   ],
   imports: [
     BrowserModule
