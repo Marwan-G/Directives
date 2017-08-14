@@ -1,15 +1,18 @@
-import {Directive, HostBinding, HostListener} from '@angular/core';
+import {Directive, HostBinding, HostListener, Input} from '@angular/core';
 
 @Directive({
   selector: '[appThirdHighlight]'
 })
   export class ThirdHighlightDirective {
-    @HostBinding('style.backgroundColor')  backgroundcolor: string = 'transparent';
+    @Input() defaultcolor: string = ' transparent';
+    @Input() highlightcolor: string = ' blue';
+    @HostBinding('style.backgroundColor')  backgroundcolor = this.defaultcolor;
+
     @HostListener('mouseover') mouseover(event: Event) {
-        this.backgroundcolor = ' green  ';
+        this.backgroundcolor = this.highlightcolor;
     }
     @HostListener('mouseout') mouseout(event: Event) {
-        this.backgroundcolor = ' transparent  ';
+        this.backgroundcolor = this.defaultcolor;
     }
       constructor() { }
   }
